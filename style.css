@@ -1,0 +1,14 @@
+.sideBar {
+	text-align:right;
+	font-size:18pt;
+	margin-right:90%;
+	padding-right:10px;
+	padding-top:60px;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.titleBar {
+	float:right;
+	padding-right:10px;
+}
