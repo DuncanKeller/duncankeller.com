@@ -1,16 +1,25 @@
-<head>
+<!DOCTYPE html>
+<html>
 
+<head>
+	<?php include "libraries.php" ?>
+	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-
+	<div class = "sideBar">
+		<?php include "src/sideBar.php"; ?>
+	</div>
 	<div class = "page">
-		<div class = "sideBar">
-			<?php include "sideBar.php"; ?>
+		
+		<div class = "titleBar">
+			<?php include "src/titleBar.php"; ?>
 		</div>
 
-		<div class = "titleBar">
-			<?php include "titleBar.php"; ?>
-		</div>
+		<div class = "content">
+
+	 	</div>
 	</div>
 
-</body>
+</body
+
+</html>
