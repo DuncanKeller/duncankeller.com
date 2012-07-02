@@ -1,16 +1,24 @@
 int width = 100;
-int height = 70;
-int round = 5;
+int height = 50;
+int round = 10;
+int stroke = 2;
+
+string text = "";
 
 void setup() {
-    size(width, height);
+    background(0, 0, 0, 0);
+    size(width + (stroke * 2), height + (stroke * 2));
     strokeWeight(2);
-    //fill(0, 100, 0, 175); 
-    fill(100);
+    fill(145, 255, 145, 175); 
+}
+
+void setText(string t) {
+    text = t;
 }
 
 void draw() {
-    //rect(0, 0, width, height, round, round, round, round);
-    rect(0, 0, width, height);
-    println("Hello ErrorLog!");
+    rect(stroke, stroke, width, height, round, round, round, round);
+	if(t == "hi") {
+	println("yo");
+	}
 }
