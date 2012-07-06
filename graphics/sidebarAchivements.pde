@@ -12,10 +12,7 @@ void setup() {
     strokeWeight(2);
     PFont font = loadFont("formplex12.ttf"); 
     textFont(font, fontSize); 
-    while(textWidth(title) > width / 0.8) {
-	fontSize--;
-        textFont(font, fontSize); 
-    }
+    setText("achivements");
 }
 
 void setText(string t) {

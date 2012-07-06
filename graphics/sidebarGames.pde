@@ -2,7 +2,7 @@ int width = 100;
 int height = 50;
 int round = 10;
 int stroke = 2;
-int fontSize = 16;
+int fontSize = 24;
 
 string title = "";
 
@@ -12,10 +12,7 @@ void setup() {
     strokeWeight(2);
     PFont font = loadFont("formplex12.ttf"); 
     textFont(font, fontSize); 
-    while(textWidth(title) > width / 0.8) {
-	fontSize--;
-        textFont(font, fontSize); 
-    }
+    setText("games");
 }
 
 void setText(string t) {
