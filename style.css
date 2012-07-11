@@ -1,3 +1,7 @@
+html {
+    overflow:hidden;
+}
+
 .sideBar {
 	text-align:right;
 	font-size:18pt;
@@ -7,6 +11,15 @@
 	font-weight:bold;
 	text-decoration:none;
 	position:absolute;
+}
+
+.content {
+    width:80%;
+    height:60%;
+    margin-top:100%;
+    margin-left:120px;
+    position:absolute;
+    overflow:visible;
 }
 
 #aboutCanvas {
@@ -26,6 +39,7 @@
 }
 
 .page {
+    margin:0;
 	width:100%;
 	height:100%;
 }

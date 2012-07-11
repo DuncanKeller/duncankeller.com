@@ -15,7 +15,8 @@
 			<?php include "src/titleBar.php"; ?>
 		</div>
 
-		<div class = "content">
+		<div class = "content" id = "content">
+            <?php include "src/content.php"; ?>
 	 	</div>
 	</div>
 

@@ -38,35 +38,61 @@ var setupButton = function(text, canvas) {
     if (!pjs) tId=setInterval(function() {
         pjs = Processing.getInstanceById(canvas);
         if (pjs) {
-	    pjs.setText(text);
-	    clearInterval(tId);
+	        pjs.setText(text);
+	        clearInterval(tId);
         }
     },1);
 }
 
-var addHiding = function(canvas) {
-    $('#' + canvas).click(function() {
-        if(currentMenu != "" && currentMenu != canvas && !locked) {
+var setContent = function() {
+    $("#content").animate({
+        marginTop: ($(document).height() * 0.15)
+    }, 300, function() {
+        // Animation complete.
+    });
+}
 
-	    $('#' + currentMenu).animate({
-	        marginLeft: '+=160',
-	    }, 500, function() {
-	        // Animation complete.
+var switchContent = function() {
+    $("#content").animate({
+        marginTop: ($(document).height())
+    }, 300, function() {
+        // Animation complete.
+        setContent();
+    });
+}
+
+
+
+var addHiding = function(canvas) {
+    $("#" + canvas).click(function() {
+        // restore hidden tab
+        if(currentMenu != "" && currentMenu != canvas && !locked) {
+            setContent();
+	        $("#" + currentMenu).animate({
+	            marginLeft: '+=80',
+	        }, 400, function() {
+	            // Animation complete.
             });
+            
         }
+        // hide clicked tab
         if(currentMenu != canvas && !locked) {
-	    locked = true;
-	    $('#' + canvas).animate({
-	        marginLeft: '-=160',
-	    }, 500, function() {
-	        // Animation complete.
-	        currentMenu = canvas;
-		locked = false;
+	        locked = true;
+            switchContent();
+	        $("#" + canvas).animate({
+	            marginLeft: '-=80'
+	        }, 400, function() {
+	            // Animation complete.
+	            currentMenu = canvas;
+		        locked = false;
             });
-	}
+            
+	    }
     });
 
 }
+
+
 
  
 </script>
