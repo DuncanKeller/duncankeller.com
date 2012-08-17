@@ -25,11 +25,11 @@ $(document).ready(function() {
     setupButton("resume", "resumeCanvas");
     setupButton("achivements", "achivementsCanvas");
     setupButton("github", "githubCanvas");
-    addHiding("aboutCanvas");
-    addHiding("gamesCanvas");
-    addHiding("resumeCanvas");
-    addHiding("achivementsCanvas");
-    addHiding("githubCanvas");
+    addHiding("aboutCanvas", "src/about");
+    addHiding("gamesCanvas", "src/about");
+    addHiding("resumeCanvas", "src/about");
+    addHiding("achivementsCanvas", "src/about");
+    //addHiding("githubCanvas");
 });
 
 var setupButton = function(text, canvas) {
@@ -44,30 +44,44 @@ var setupButton = function(text, canvas) {
     },1);
 }
 
-var setContent = function() {
+
+var setContent = function(file) {
+
+    $("#innerContentText").innerHTML = "";
+    $("#innerContentText").load(file + ".php");
+    console.log($("#innerContentText").innerHTML);
+
+    var pane = $(".scroll-pane");
+    var api = pane.data("jsp");
+    api.reinitialise();
+
     $("#content").animate({
-        marginTop: ($(document).height() * 0.15)
+        marginTop: "60px"
     }, 300, function() {
         // Animation complete.
     });
+    
 }
 
-var switchContent = function() {
+var switchContent = function(file) {
     $("#content").animate({
         marginTop: ($(document).height())
     }, 300, function() {
         // Animation complete.
-        setContent();
+        setContent(file);
     });
+    //console.log($("#innerContentText")).innerHTML;
 }
 
 
-
-var addHiding = function(canvas) {
+var addHiding = function(canvas, file) {
     $("#" + canvas).click(function() {
         // restore hidden tab
         if(currentMenu != "" && currentMenu != canvas && !locked) {
-            setContent();
+            setContent(file);
+            var pane = $(".scroll-pane");
+            var api = pane.data("jsp");
+            api.reinitialise();
 	        $("#" + currentMenu).animate({
 	            marginLeft: '+=80',
 	        }, 400, function() {
@@ -78,7 +92,7 @@ var addHiding = function(canvas) {
         // hide clicked tab
         if(currentMenu != canvas && !locked) {
 	        locked = true;
-            switchContent();
+            switchContent(file);
 	        $("#" + canvas).animate({
 	            marginLeft: '-=80'
 	        }, 400, function() {

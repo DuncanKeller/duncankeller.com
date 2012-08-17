@@ -2,6 +2,19 @@ html {
     overflow:hidden;
 }
 
+body{
+    /*
+    scrollbar-shadow-color: #CEE7A3;
+    scrollbar-highlight-color: #CEE7A3;
+    scrollbar-face-color: #CEE7A3;
+    scrollbar-3dlight-color: #CEE7A3;
+    scrollbar-darkshadow-color: #CEE7A3;
+    scrollbar-track-color: #CEE7A3;
+    scrollbar-arrow-color: #CEE7A3;
+    */
+}
+
+
 .sideBar {
 	text-align:right;
 	font-size:18pt;
@@ -18,8 +31,22 @@ html {
     height:60%;
     margin-top:100%;
     margin-left:120px;
+    z-index: 100;
     position:absolute;
     overflow:visible;
+}
+
+#innerContent {
+    position:absolute;
+    top: 0;
+    overflow-y:auto;
+    margin:20px;
+    z-index: 110;
+    height:90%;
+}
+
+#innerContent img {
+    float:right;
 }
 
 #aboutCanvas {
@@ -48,4 +75,120 @@ html {
 .titleBar {
 	float:right;
 	padding-right:10px;
+}
+
+/*scrollpane*/
+
+.jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+
+.jspPane
+{
+	position: absolute;
+}
+
+.jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 16px;
+	height: 100%;
+	background: red;
+}
+
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 16px;
+	background: red;
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+	margin: 0;
+	padding: 0;
+}
+
+.jspCap
+{
+	display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.jspTrack
+{
+	background: #7bf;
+	position: relative;
+}
+
+.jspDrag
+{
+	background: #bbd;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 100%;
+}
+
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
 }

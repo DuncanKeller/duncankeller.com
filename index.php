@@ -2,8 +2,16 @@
 <html>
 
 <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 	<?php include "libraries.php" ?>
-	<link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".scroll-pane").jScrollPane();
+        });
+    </script>
+
+
 </head>
 <body>
 	<div class = "sideBar">
@@ -15,11 +23,19 @@
 			<?php include "src/titleBar.php"; ?>
 		</div>
 
-		<div class = "content" id = "content">
+		<div class = "content " id = "content">
             <?php include "src/content.php"; ?>
+            <div id = "innerContent" >
+                <div id = "innerContentText" class = "scroll-pane vertical-only"></div>
+            <!--  class = "scroll-pane jspScrollable" -->
+	 	    </div>
 	 	</div>
+
+       
 	</div>
 
-</body
+
+
+</body>
 
 </html>
