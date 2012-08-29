@@ -1,6 +1,6 @@
 int width = 100;
 int height = 50;
-int round = 10;
+int round = 5;
 int stroke = 2;
 int fontSize = 16;
 
