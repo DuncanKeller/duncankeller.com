@@ -1,4 +1,4 @@
-int round = 5;
+int round = 0;
 int stroke = 2;
 int fontSize = 12;
 int width = 0;
